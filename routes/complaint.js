@@ -11,7 +11,6 @@ router.get('/', async (req, res) =>{
     }   
 })
 
-
 router.post('/', (req, res) =>{
     const createComplaint = new complaint({
         complain: req.body.complain,
@@ -30,7 +29,7 @@ router.get('/:id', async (req, res) =>{
     try{
         complaint_resp = await complaint.findById(req.params.id)
         if(complaint_resp == null){
-            return res.status(404).json({message: "Complaint Not Found"})
+            return res.status(404).json({message: " Sorry, Complaint Not Found"})
         }else{
             res.json(complaint_resp)
         }
