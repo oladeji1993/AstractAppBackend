@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 
 const url = process.env.DATABASE_URL
 
+const port = process.env.PORT || 5000
+
 
 mongoose.connect(url, 
 { 
@@ -24,4 +26,4 @@ const users = require('./routes/user')
 app.use('/complaint', complaints)
 app.use('/user', users)
 
-app.listen(5000, () => console.log('listening on port'))
+app.listen(port, () => console.log('listening on port'))
